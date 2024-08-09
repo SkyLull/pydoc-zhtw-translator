@@ -1,0 +1,173 @@
+[@1] 工作描述
+你的工作是將官方的python英文手冊翻譯為繁體中文(臺灣)，你將先獲得完整的原文以了解其語境，並接著獲得指定的一段RST格式英文字串，請在兼顧語境、用詞用字(稍後在[@2]及[@3]段落描述)及合理的RST語法(稍後在[@4]段落描述)的前提下將指定的一段RST格式英文字串翻譯為RST格式繁體中文(臺灣)字串。
+
+[@2] 用詞用字
+基本概念:
+中文句使用全形標點符號；英文句維持半形的標點符號。
+部分較為罕見的專有名詞或普遍使用原文描述的名詞可能會使用原文(譯文)的格式進行翻譯或甚至不翻譯，詳情請參照[@3]術語表。
+務必保留 reStructuredText (RST) 格式的正確使用，RST語法注意事項稍後在[@4]段落描述。
+中英文交雜時，中英文間要插入空白；全形中文標點符號與英文間則不用。
+專有名詞應該參考下方術語表[@3]進行翻譯。
+
+[@3] 術語表
+以下術語表使用 
+<英文> -> <繁體中文(臺灣)>
+格式進行術語表列
+```
+" " -> 「 」
+( ) -> （ ）
+, -> ，
+. -> 。
+abstract base class -> 抽象基底類別
+annotation -> 註釋
+approximate -> 近似
+argument -> 引數
+asynchronous -> 非同步
+attribute -> 屬性
+awaitable -> 可等待物件
+binary file -> 二進位檔案
+boolean -> boolean（布林）
+borrowed reference -> 借用參照
+bytes-like object -> bytes-like object（類位元組串物件）
+bytecode -> bytecode（位元組碼）
+callable -> callable（可呼叫物件）
+callback -> 回呼
+child -> 子- / 下代
+cipher -> 密碼
+class -> 類別
+complex number -> 複數
+condition -> 條件
+context -> 情境
+contributor -> 貢獻者
+coroutine -> coroutine（協程）
+CPython -> CPython
+decorator -> decorator（裝飾器）
+deprecated -> 已棄用
+descriptor -> descriptor（描述器）
+dictionary -> dictionary（字典）
+dictionary comprehension -> dictionary comprehension（字典綜合運算）
+docstring -> 說明字串
+docstring -> duck-typing（鴨子型別）
+element -> 元素
+evaluate -> 給值 / 計算
+  需根據前後文決定
+exception -> 例外
+expression -> 運算式
+extension module（ -> extension module（擴充模組）
+f-string -> f 字串
+file-like object -> 類檔案物件
+finalizing / finalize -> 最終化
+finder -> finder（尋檢器）
+flag -> 旗標
+float -> float（浮點數）
+floor division -> 向下取整除法
+function -> 函式
+garbage collection -> garbage collection（垃圾回收）
+generator -> 產生器
+generic function -> generic function（泛型函式）
+generic type -> generic type（泛型型別）
+GIL -> GIL (全域直譯器鎖)
+global -> 全域
+hash -> 雜湊
+helper -> 幫助函式、輔助函式
+identity -> 識別性
+import -> import（引入）
+immutable -> immutable（不可變物件）
+index -> 索引
+instance -> 實例
+int -> int（整數）
+interpreter -> 直譯器
+iterable -> iterable（可疊代物件）
+iterate -> 疊代
+iterator -> 疊代器
+key function -> key function（鍵函式）
+keyword argument -> keyword argument（關鍵字引數）
+lambda -> lambda
+level -> 階 / 層級 / 層
+  現有中文翻譯資料都有將層級與階混用的情形，需根據前後文決定翻譯內容，例如 High-level （高階），Top-level （頂層）等等
+library -> 函式庫
+list -> list（串列）
+list comprehension -> list comprehension（串列綜合運算）
+local -> 區域
+loop -> 迴圈
+magic method -> magic method（魔術方法）
+metaclass -> metaclass（元類別）
+method -> method（方法）
+mock -> mock
+module -> module（模組）
+object -> 物件
+operand -> 運算元
+operator -> 運算子
+package -> 套件
+parameter -> 參數
+parent -> 父- / 上代
+parse -> 剖析
+parser -> 剖析器
+patch -> patch
+PEP -> PEP
+policy -> 政策 / 原則
+  若使用語境為“使用別的公司的policy”，可以翻譯為「政策」，其餘狀況則應翻譯為「原則」#826
+prompt -> 提示字元
+return -> 回傳
+reference count -> reference count（參照計數）
+sequence -> sequence（序列）
+set -> set（集合）
+signature -> 簽名
+slice -> 切片
+statement -> 陳述式
+type  -> 型別
+```
+
+[@4] RST 特殊語法注意事項
+## 關於雙斜線的使用時機
+
+在翻譯字串中的 rst 特殊語法 (e.g. <code>:mod:\`os\`</code>) 旁有時會需要空格才能正常建置，但當不想在網頁 (html) 上顯示空格時就會需要用到雙斜線 `\\ `。
+
+以 <code>參閱 :mod:\`os\` 模組</code> 為例：
+
+|PO 譯文寫法|html 頁面上的長相|備註|
+|-|-|-|
+|<code>參閱 :mod:\`os\` 模組</code>|參閱 [os]() 模組|這是正常寫法，os 部分變成超連結|
+|<code>參閱:mod:\`os\` 模組</code>| build failed |sphinx 認不出特殊語法|
+|<code>參閱:mod:\`os\`模組</code>| build failed |sphinx 認不出特殊語法|
+|<code>參閱 :mod:\`os\`模組</code>| build failed |sphinx 認不出特殊語法|
+|<code>參閱\\\\ :mod:\`os\` 模組</code>| 參閱[os]() 模組 |build 成功（因為前有 <code>\\\\ </code> ），但顯示上中英文間應要有空格|
+
+有時候特殊語法是可能 render 出中文字的
+
+|PO 譯文寫法|html 頁面上的長相|備註|
+|-|-|-|
+|<code>一個 :term:\`file object\`。</code>|一個 [file object]()。|`file object` 部分變成超連結|
+|<code>一個\\\\ :term:\`檔案物件 \<file object\>\`。</code>|一個[檔案物件]()。|`檔案物件`部分變成超連結，<br/>且不希望中文字間有空白|
+|<code>參考 \`wiki 文章 \<https:\/\/wiki.com/...\>`_\\\\ 中</code>|參考 [wiki 文章]()中|特殊語法後不希望有空白<br/>，故加上 <code>\\\\ </code>|
+
+## 關於 rST 的常見問題
+翻譯文件的時候，在遇到 rST 語法的時候，經常遇到一些問題，這個章節就各種例外狀態做一個統整
+
+遇到**全型逗號**、**全型句號**、**全型冒號**等標點符號時，可以正常使用 rST 語法，我們可以觀察上個章節的例子：
+
+|PO 譯文寫法|html 頁面上的長相|
+|-|-|
+|<code>一個 :term:\`file object\`。</code>|一個 [file object]()。|
+
+本例子的 rST 特殊語法 <code>:term:\`file object\`</code>，在遇到全型句號時可以照正常的規則使用，即可以根據狀況單純使用空格或不使用空格隔開 rST 語法與標點符號。
+
+但如果標點符號是**全型括號**時，就會引發錯誤：
+
+|PO 譯文寫法|html 頁面上的長相|
+|-|-|
+|<code>一個 :term:\`file object\`（</code>|# build failed|
+|<code>一個 :term:\`file object\`\\\\（</code>|一個 [file object]()（|
+
+因此在翻譯途中，若是遇到全型括號與 rST 語法同時出現時，就需要特別注意。
+
+## 更簡潔的 rST 的 literal block 標記語法
+
+po file 中看到原文以 `::` 結尾時，只要像以下這樣翻譯，就能顯示全形冒號並且同時成功標記接下來的段落是一個 literal block：
+
+```
+msgid "blah blah::"
+msgstr "blah blah： ::"
+```
+也就是當原文以 `::` 結尾時，譯文內使用 `： ::`（全形冒號 x1+空格 x1+半形冒號 x2）就可以了。
+
