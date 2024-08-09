@@ -1,4 +1,4 @@
-# python 繁中 gpt 翻譯助手
+# Python Doc 繁中 GPT 翻譯助手
 這是一個很簡單的翻譯助手，自動讀取你所翻譯中的 `.po` 文件並抓取其原始說明文件作為參考，並加上提示詞工程調整過後的提示並以gpt-4o進行翻譯。
 
 提示詞請看 `translator.py` 和 `predescription.txt`，其中包含術語表可自行更新。
@@ -9,9 +9,24 @@
 
 `2024/08/09 gpt-4o 0.005 USD / 1k tokens`
 
+```
+Prompt 結構
+系統
+  [1] 基本指令
+  [2] 用字用詞簡述
+  [3] 術語表
+  [4] rst說明
+  [5] 原文.rst檔 （隨翻譯原文大小浮動）
+使用者
+  [1] 任務指令
+
+輸入
+  [1] 待翻譯段落
+```
+
 ## 需求
-  - python = 3.11
-  - 自備 openai API key
+  - Python = 3.11
+  - 自備 Openai API key
 
 ## 安裝
 ```bash
@@ -28,24 +43,22 @@ python main.py
 ## 使用
 ![image](https://github.com/user-attachments/assets/88e0f845-1f8f-472e-b342-1082a5b9e63f)
 
-  1. 右上角按鈕打開 .po 檔 （必須使用pydoc-zhtw官方的repo結構，以免抓不到原始資料）
-  2. 右下角輸入你的api key, 並點選 connect
-  3. 上半視窗任選一個條目
-  4. 若想呼喚gpt協助則按下gpt help按鈕
-  5. 變更完譯文記得存檔
+  1. 右上角按鈕打開一個 .po 檔 （必須使用pydoc-zhtw官方的repo結構，以免抓不到原始資料）。
+  2. 右下角輸入你的 Api key, 並點選 connect。下方文字顯示 Connected 就是成功連上線。
+  3. 上半視窗任選一個條目。
+  4. 若想呼喚 GPT 協助則按下 GPT help 按鈕。
+  5. 變更完譯文記得存檔。不存檔時換到其他 entry 則直接丟棄該結果。
 
 ## 已知問題
   - ubuntu 無法在界面內輸入注音
   - 點選文字列表時不能按最左邊的灰色行頭
-  - gpt回應格式並不嚴格，有時候會切到回應文字本體，有時後會放跑無意義文字
+  - gpt回應格式並不嚴格，目前的 parsing 是暴力硬切，有時候會切到回應文字本體，有時後會放跑無意義文字
+  - codebase很醜
 
 ## TODO
-  [ ] 跳轉（拔除或實作）
-  
-  [ ] 自動儲存
-  
-  [ ] fuzzy標記
-  
-  [ ] 即時更新已翻譯標記
-
-  [ ] 加入doc strings
+ - [ ] 跳轉功能（拔除或實作）
+ - [ ] 自動儲存
+ - [ ] fuzzy標記
+ - [ ] 即時更新已翻譯標記
+ - [ ] 加入doc strings
+ - [ ] 提高prompt模組化程度
