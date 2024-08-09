@@ -25,7 +25,7 @@ Prompt 結構
 ```
 
 ## 需求
-  - Python = 3.11
+  - Python = 3.11 （已受測試，其他版本未知）
   - 自備 Openai API key
 
 ## 安裝
