@@ -43,3 +43,5 @@ python main.py
   [ ] fuzzy標記
   
   [ ] 即時更新已翻譯標記
+
+  [ ] 加入doc strings
