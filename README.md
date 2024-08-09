@@ -26,6 +26,8 @@ python main.py
 ```
 
 ## 使用
+![image](https://github.com/user-attachments/assets/88e0f845-1f8f-472e-b342-1082a5b9e63f)
+
   1. 右上角按鈕打開 .po 檔 （必須使用pydoc-zhtw官方的repo結構，以免抓不到原始資料）
   2. 右下角輸入你的api key, 並點選 connect
   3. 上半視窗任選一個條目
