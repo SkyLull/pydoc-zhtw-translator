@@ -41,7 +41,7 @@ condition -> 條件
 context -> 情境
 contributor -> 貢獻者
 column -> 欄 / 行 （column）
- 要特別注意僅體與繁體中文的用法相反，正確的繁體中文（台灣）翻譯為直行（column）
+  要特別注意簡體與繁體中文的用法相反，正確的繁體中文（台灣）翻譯為直行（column）
 coroutine -> 協程（coroutine）
 custom -> 自訂
 CPython -> CPython
@@ -56,7 +56,7 @@ docstring -> 說明字串
 docstring -> 鴨子型別（duck-typing）
 element -> 元素
 escape -> 轉義
- 僅指 ascii 的 escape character 時使用「轉義」，否則譯做「跳脫」
+  僅指 ascii 的 escape character 時使用「轉義」，否則譯做「跳脫」
 evaluate -> 給值 / 計算
   需根據前後文決定
 exception -> 例外
@@ -120,7 +120,7 @@ prompt -> 提示字元
 return -> 回傳
 reference count -> 參照計數（reference count）
 row -> 列（row）
- 要特別注意僅體與繁體中文的用法相反，正確的繁體中文（台灣）翻譯為橫列（row）
+  要特別注意簡體與繁體中文的用法相反，正確的繁體中文（台灣）翻譯為橫列（row）
 sequence -> 序列（sequence）
 set -> 集合（set）
 signature -> 簽名
@@ -132,43 +132,41 @@ type -> 型別
 [@4] RST 特殊語法注意事項
 ## 關於雙斜線的使用時機
 
-在翻譯字串中的 rst 特殊語法 (e.g. <code>:mod:\`os\`</code>) 旁有時會需要空格才能正常建置，但當不想在網頁 (html) 上顯示空格時就會需要用到雙斜線 `\\ `。
+在翻譯字串中的 rst 特殊語法 (e.g.: mod:\`os\` ) 旁有時會需要空格才能正常建置，但當不想在網頁 (html) 上顯示空格時就會需要用到雙斜線 `\\ `。
 
-以 <code>參閱 :mod:\`os\` 模組</code> 為例：
+以譯文 `參閱 os 模組` 為例：
 
-|PO 譯文寫法|html 頁面上的長相|備註|
-|-|-|-|
-|<code>參閱 :mod:\`os\` 模組</code>|參閱 [os]() 模組|這是正常寫法，os 部分變成超連結|
-|<code>參閱:mod:\`os\` 模組</code>| build failed |sphinx 認不出特殊語法|
-|<code>參閱:mod:\`os\`模組</code>| build failed |sphinx 認不出特殊語法|
-|<code>參閱 :mod:\`os\`模組</code>| build failed |sphinx 認不出特殊語法|
-|<code>參閱\\\\ :mod:\`os\` 模組</code>| 參閱[os]() 模組 |build 成功（因為前有 <code>\\\\ </code> ），但顯示上中英文間應要有空格|
+|PO 譯文寫法 | 備註|
+|-|-|
+|參閱 :mod:\`os\` 模組 | 這是正常寫法，os 部分會變成超連結|
+|參閱:mod:\`os\` 模組 | build failed: sphinx 認不出特殊語法|
+|參閱:mod:\`os\`模組 | build failed: sphinx 認不出特殊語法|
+|參閱 :mod:\`os\`模組 | build failed: sphinx 認不出特殊語法|
+|參閱\\ :mod:\`os\` 模組 | build 成功，因為前有 `\\ ` 空出特殊語法的間隔，讓sphinx可以正確辨識語法，但`\\ `會將該空格字元視覺顯示上的空格消去，但顯示上中英文間應要有空格|
 
 有時候特殊語法是可能 render 出中文字的
 
-|PO 譯文寫法|html 頁面上的長相|備註|
-|-|-|-|
-|<code>一個 :term:\`file object\`。</code>|一個 [file object]()。|`file object` 部分變成超連結|
-|<code>一個\\\\ :term:\`檔案物件 \<file object\>\`。</code>|一個[檔案物件]()。|`檔案物件`部分變成超連結，<br/>且不希望中文字間有空白|
-|<code>參考 \`wiki 文章 \<https:\/\/wiki.com/...\>`_\\\\ 中</code>|參考 [wiki 文章]()中|特殊語法後不希望有空白<br/>，故加上 <code>\\\\ </code>|
+|PO 譯文寫法|備註|
+|-|-|
+|一個 :term:\`file object\`。 | `file object` 部分變成超連結|
+|一個\\ :term:\`檔案物件 \<file object\>\`。 | `檔案物件`部分變成超連結，且不希望中文字間有空白|
+|參考 \`wiki 文章 <https://wiki.com/...>`_\\ 中 | `wiki 文章`最後是中文字，文字間的銜接不希望顯示空白，故特殊語法加上 `\\ ` 以消除視覺上空格|
 
 ## 關於 rST 的常見問題
 翻譯文件的時候，在遇到 rST 語法的時候，經常遇到一些問題，這個章節就各種例外狀態做一個統整
 
 遇到**全型逗號**、**全型句號**、**全型冒號**等標點符號時，可以正常使用 rST 語法，我們可以觀察上個章節的例子：
 
-|PO 譯文寫法|html 頁面上的長相|
-|-|-|
-|<code>一個 :term:\`file object\`。</code>|一個 [file object]()。|
+一個 :term:\`file object\`。
 
-本例子的 rST 特殊語法 <code>:term:\`file object\`</code>，在遇到全型句號時可以照正常的規則使用，即可以根據狀況單純使用空格或不使用空格隔開 rST 語法與標點符號。
+本例子的 rST 特殊語法 :term:\`file object\` ，在遇到全型句號時可以照正常的規則使用，即可以根據狀況單純使用空格或不使用空格隔開 rST 語法與標點符號。
 
 但如果標點符號是**全型括號**時，就會引發錯誤：
 
-|PO 譯文寫法|html 頁面上的長相|
+|PO 譯文寫法|備註|
 |-|-|
-|<code>一個 :term:\`file object\`（</code>|# build failed|
-|<code>一個 :term:\`file object\`\\\\（</code>|一個 [file object]()（|
+|一個 :term:\`file object\`（ | build failed |
+|一個 :term:\`file object\`\\（ | build passed |
 
 因此在翻譯途中，若是遇到全型括號與 rST 語法同時出現時，就需要特別注意。
 
@@ -180,5 +178,5 @@ po file 中看到原文以 `::` 結尾時，只要像以下這樣翻譯，就能
 msgid "blah blah::"
 msgstr "blah blah： ::"
 ```
-也就是當原文以 `::` 結尾時，譯文內使用 `： ::`（全形冒號 x1+空格 x1+半形冒號 x2）就可以了。
+也就是當原文以 `::` 結尾時，譯文內使用 `： ::`（全形冒號x1 + 空格 x1 + 半形冒號x2）就可以了。
 
