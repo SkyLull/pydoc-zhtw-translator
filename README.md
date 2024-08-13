@@ -52,8 +52,14 @@ python main.py
 ## 已知問題
   - ubuntu 無法在界面內輸入注音
   - 點選文字列表時不能按最左邊的灰色行頭
-  - gpt回應格式並不嚴格，目前的 parsing 是暴力硬切，有時候會切到回應文字本體，有時後會放跑無意義文字
+  - ~~gpt回應格式並不嚴格，目前的 parsing 是暴力硬切，有時候會切到回應文字本體，有時後會放跑無意義文字~~
+    + 變更為使用openai提供的格式化回應
   - codebase很醜
+
+## changelog
+  - V 1.0 working
+  - V 1.1 working
+    + 使用 structured response
 
 ## TODO
  - [ ] 跳轉功能（拔除或實作）
