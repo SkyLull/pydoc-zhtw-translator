@@ -26,75 +26,84 @@ asynchronous -> 非同步
 attribute -> 屬性
 awaitable -> 可等待物件
 binary file -> 二進位檔案
-boolean -> boolean（布林）
+binary framed protocol -> 二進位分框協定
+boolean -> 布林（boolean）
 borrowed reference -> 借用參照
-bytes-like object -> bytes-like object（類位元組串物件）
-bytecode -> bytecode（位元組碼）
-callable -> callable（可呼叫物件）
+bytes-like object -> 類位元組串物件（bytes-like object）
+bytecode -> 位元組碼（bytecode）
+callable -> 可呼叫物件（callable）
 callback -> 回呼
 child -> 子- / 下代
-cipher -> 密碼
+cipher -> 加密方法
 class -> 類別
 complex number -> 複數
 condition -> 條件
 context -> 情境
 contributor -> 貢獻者
-coroutine -> coroutine（協程）
+column -> 欄 / 行 （column）
+ 要特別注意僅體與繁體中文的用法相反，正確的繁體中文（台灣）翻譯為直行（column）
+coroutine -> 協程（coroutine）
+custom -> 自訂
 CPython -> CPython
-decorator -> decorator（裝飾器）
+decorator -> 裝飾器（decorator）
 deprecated -> 已棄用
-descriptor -> descriptor（描述器）
-dictionary -> dictionary（字典）
-dictionary comprehension -> dictionary comprehension（字典綜合運算）
+descriptor -> 描述器（descriptor）
+deserialization -> 去序列化（deserialization）
+dict -> 字典（dict）
+dictionary -> 字典（dictionary）
+dictionary comprehension -> 字典綜合運算（dictionary comprehension）
 docstring -> 說明字串
-docstring -> duck-typing（鴨子型別）
+docstring -> 鴨子型別（duck-typing）
 element -> 元素
+escape -> 轉義
+ 僅指 ascii 的 escape character 時使用「轉義」，否則譯做「跳脫」
 evaluate -> 給值 / 計算
   需根據前後文決定
 exception -> 例外
 expression -> 運算式
-extension module（ -> extension module（擴充模組）
+extension module -> 擴充模組（extension module）
 f-string -> f 字串
 file-like object -> 類檔案物件
 finalizing / finalize -> 最終化
-finder -> finder（尋檢器）
+finder -> 尋檢器（finder）
 flag -> 旗標
-float -> float（浮點數）
+float -> 浮點數（float）
 floor division -> 向下取整除法
 function -> 函式
-garbage collection -> garbage collection（垃圾回收）
+garbage collection -> 垃圾回收（garbage collection）
 generator -> 產生器
-generic function -> generic function（泛型函式）
-generic type -> generic type（泛型型別）
-GIL -> GIL (全域直譯器鎖)
+generic function -> 泛型函式（generic function）
+generic type -> 泛型型別（generic type）
+GIL -> 全域直譯器鎖 （GIL）
 global -> 全域
 hash -> 雜湊
 helper -> 幫助函式、輔助函式
 identity -> 識別性
-import -> import（引入）
-immutable -> immutable（不可變物件）
+import -> 引入（import）
+immutable -> 不可變物件（immutable）
 index -> 索引
 instance -> 實例
-int -> int（整數）
+int -> 整數（int）
 interpreter -> 直譯器
-iterable -> iterable（可疊代物件）
+iterable -> 可疊代物件（iterable）
 iterate -> 疊代
 iterator -> 疊代器
-key function -> key function（鍵函式）
-keyword argument -> keyword argument（關鍵字引數）
+key function -> 鍵函數（key function）
+keyword argument -> 關鍵字引數（keyword argument）
+kwarg -> 關鍵字引數（kwarg）
 lambda -> lambda
 level -> 階 / 層級 / 層
   現有中文翻譯資料都有將層級與階混用的情形，需根據前後文決定翻譯內容，例如 High-level （高階），Top-level （頂層）等等
 library -> 函式庫
-list -> list（串列）
-list comprehension -> list comprehension（串列綜合運算）
+list -> 串列（list）
+list comprehension -> 串列綜合運算（list comprehension）
 local -> 區域
 loop -> 迴圈
-magic method -> magic method（魔術方法）
-metaclass -> metaclass（元類別）
-method -> method（方法）
+magic method -> 魔術方法（magic method）
+metaclass -> 元類別（metaclass）
+method -> 方法（method）
 mock -> mock
-module -> module（模組）
+module -> 模組（module）
 object -> 物件
 operand -> 運算元
 operator -> 運算子
@@ -106,16 +115,18 @@ parser -> 剖析器
 patch -> patch
 PEP -> PEP
 policy -> 政策 / 原則
-  若使用語境為“使用別的公司的policy”，可以翻譯為「政策」，其餘狀況則應翻譯為「原則」#826
+  若使用語境為“使用別的公司的policy”，可以翻譯為「政策」，其餘狀況則應翻譯為「原則」
 prompt -> 提示字元
 return -> 回傳
-reference count -> reference count（參照計數）
-sequence -> sequence（序列）
-set -> set（集合）
+reference count -> 參照計數（reference count）
+row -> 列（row）
+ 要特別注意僅體與繁體中文的用法相反，正確的繁體中文（台灣）翻譯為橫列（row）
+sequence -> 序列（sequence）
+set -> 集合（set）
 signature -> 簽名
 slice -> 切片
 statement -> 陳述式
-type  -> 型別
+type -> 型別
 ```
 
 [@4] RST 特殊語法注意事項
