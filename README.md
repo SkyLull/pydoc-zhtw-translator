@@ -49,23 +49,9 @@ python main.py
   4. 若想呼喚 GPT 協助則按下 GPT help 按鈕。
   5. 變更完譯文記得存檔。不存檔時換到其他 entry 則直接丟棄該結果。
 
-## 已知問題
-  - 使用 ubuntu 時無法在界面內輸入注音
-  - 使用 windows 時，輸入 `\\` 會被轉成 `\\\\`
-  - 點選文字列表時不能按最左邊的灰色行頭
-  - ~~gpt回應格式並不嚴格，目前的 parsing 是暴力硬切，有時候會切到回應文字本體，有時後會放跑無意義文字~~
-    + 變更為使用openai提供的格式化回應
-  - codebase很醜
-
 ## Changelog
   - V 1.0 working
   - V 1.1 working
     + 使用 structured response
-
-## TODO
- - [ ] 跳轉功能（拔除或實作）
- - [ ] 自動儲存
- - [ ] fuzzy標記
- - [ ] 即時更新已翻譯標記
- - [ ] 加入doc strings
- - [ ] 提高prompt模組化程度
+  - V 1.2 working
+    + 現在會根據譯文是否為空即時更新 `已翻譯` 的標記
