@@ -55,3 +55,6 @@ python main.py
     + 使用 structured response
   - V 1.2 working
     + 現在會根據譯文是否為空即時更新 `已翻譯` 的標記
+   
+## 已知問題
+請見 issue
