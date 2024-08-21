@@ -7,6 +7,8 @@ import pathlib
 from translator import Prompter
 import requests
 from qtui_ui import Ui_MainWindow
+import os
+import sys
 
 
 class TableModel(QtCore.QAbstractTableModel):
@@ -60,7 +62,7 @@ class FunctionFrame():
 
             # Update the corresponding entry in the .po file
             self.working_file[self.current_row].msgstr = new_translation
-
+            self.data_model._data[self.current_row][0] = 'V' if new_translation else ''
             # Save the .po file back to disk
             self.working_file.save()
 
@@ -81,7 +83,7 @@ class FunctionFrame():
             self.window.tableView.clicked.connect(self.put_txt)
 
             if filepath.parts[-2] not in self.pydoc_classes:
-                print("you seems not loading .po file from an officially"
+                print("[Info] You seems not loading .po file from an officially"
                 "structured repo, assuming this entry is from 'library'.")
             
             dir_name = filepath.parts[-2] if filepath.parts[-2] in self.pydoc_classes else 'library'
@@ -93,6 +95,8 @@ class FunctionFrame():
                 self.working_doc = doc_request.text
                 self.prompter = Prompter(plain_doc=self.working_doc)
             else:
+                print("[Error] Fail to fetch origianl .rst file, gpt helper diabled.")
+                self.window.lab_connection_stat.setText("No RST.")
                 self.prompter = None
                 self.working_doc = None
 
@@ -153,8 +157,8 @@ class FunctionFrame():
 
 
 if __name__ == '__main__':
-    import sys
     app = QtWidgets.QApplication(sys.argv)
+    os.environ['QT_IM_MODULE'] = 'fcitx'
     main_window = QtWidgets.QMainWindow()
     window = Ui_MainWindow()
     window.setupUi(main_window)
