@@ -13,9 +13,9 @@ import sys
 
 class TableModel(QtCore.QAbstractTableModel):
     def __init__(self, data):
-        self.columns = ["Translated", "Contents"]
+        self.columns = ["Tags", "Contents"]
         super(TableModel, self).__init__()
-        self._data = [['V' if entry.translated() else ' ', entry.msgid] for entry in data]
+        self._data = [['T' if entry.translated() else '  ' + 'F' if entry.fuzzy else ' ', entry.msgid] for entry in data]
 
     def headerData(self, section: int, orientation, role):
         if orientation == Qt.Horizontal and role == Qt.DisplayRole:
@@ -62,7 +62,7 @@ class FunctionFrame():
 
             # Update the corresponding entry in the .po file
             self.working_file[self.current_row].msgstr = new_translation
-            self.data_model._data[self.current_row][0] = 'V' if new_translation else ''
+            self.data_model._data[self.current_row][0] = 'T' if new_translation else '  '
             # Save the .po file back to disk
             self.working_file.save()
 
@@ -77,8 +77,8 @@ class FunctionFrame():
             self.working_file = polib.pofile(filename)
             self.data_model = TableModel(self.working_file)
             self.window.tableView.setModel(self.data_model)
-            self.window.tableView.horizontalHeader().resizeSection(0, 90)
-            self.window.tableView.horizontalHeader().resizeSection(1, 640)
+            self.window.tableView.horizontalHeader().resizeSection(0, 10)
+            self.window.tableView.horizontalHeader().resizeSection(1, 700)
             self.window.tableView.resizeRowsToContents()
             self.window.tableView.clicked.connect(self.put_txt)
 

@@ -31,5 +31,6 @@ msgid ""
 msgstr ""
 
 #: ../../library/i18n.rst:12
+#, fuzzy
 msgid "The list of modules described in this chapter is:"
 msgstr "本章節所描述的模組列表為："
