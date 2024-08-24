@@ -78,7 +78,7 @@ class FunctionFrame():
             self.data_model = TableModel(self.working_file)
             self.window.tableView.setModel(self.data_model)
             self.window.tableView.horizontalHeader().resizeSection(0, 10)
-            self.window.tableView.horizontalHeader().resizeSection(1, 700)
+            self.window.tableView.horizontalHeader().resizeSection(1, 690)
             self.window.tableView.resizeRowsToContents()
             self.window.tableView.clicked.connect(self.put_txt)
 
@@ -137,6 +137,8 @@ class FunctionFrame():
             self.window.lab_connection_stat.setText(status)
             if status == "Connected.":
                 self.window.btn_gpt.setEnabled(True)
+        else:
+            self.window.lab_connection_stat.setText("load a file first")
 
 
     def connect_ui(self):

@@ -57,6 +57,7 @@ python main.py
     + 現在會根據譯文是否為空即時更新 `已翻譯` 的標記
   - V 1.3 working
     + 現在能標記出 `T` 為已翻譯，`F` 為 fuzzy entry
-   
+  - V 1.3.1 working
+    + 現在會顯示訊息告知使用者，必須先載入.po檔才能開始連線到api
 ## 已知問題
 請見 issue

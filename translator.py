@@ -21,6 +21,7 @@ class Prompter():
             self.client = openai.OpenAI(api_key=key)
             try:
                 info = self.client.models.retrieve('gpt-4o-2024-08-06')
+                print(info)
                 print("Model is present.")
                 return "Connected."
             except openai.AuthenticationError:
