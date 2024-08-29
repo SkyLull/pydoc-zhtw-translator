@@ -107,6 +107,7 @@ method -> 方法（method）
 mock -> mock
 module -> 模組（module）
 object -> 物件
+opcode -> 操作碼
 operand -> 運算元
 operator -> 運算子
 package -> 套件
@@ -121,9 +122,11 @@ pickle -> pickle 封包
 pickle -> 封裝
  作為動詞使用時譯為封裝
 pickler -> 封裝器（pickler）
+pickling -> 封裝
 policy -> 政策 / 原則
   若使用語境為“使用別的公司的policy”，可以翻譯為「政策」，其餘狀況則應翻譯為「原則」
 prompt -> 提示字元
+qualified name -> 限定名稱
 reduce -> 縮減
 reduction function -> 縮減函式
 return -> 回傳
@@ -138,6 +141,8 @@ statement -> 陳述式
 type -> 型別
 unpickle -> 拆封
 unpickler -> 拆封器（unpickler）
+wrapper -> 包裝器
+wrapper function -> 包裝函數
 ```
 
 [@4] RST 特殊語法注意事項
