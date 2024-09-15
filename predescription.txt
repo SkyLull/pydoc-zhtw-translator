@@ -136,8 +136,11 @@ row -> 列（row）
 sequence -> 序列（sequence）
 set -> 集合（set）
 signature -> 簽名
+signature -> 輸入特徵
+  特指python的函數輸入參數特徵時才使用輸入特徵作為翻譯
 slice -> 切片
 statement -> 陳述式
+support -> 支援
 type -> 型別
 unpickle -> 拆封
 unpickler -> 拆封器（unpickler）
